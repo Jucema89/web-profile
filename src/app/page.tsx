@@ -1,11 +1,36 @@
-import Image from "next/image";
+'use client'
 import Profile from "./components/profile";
 import About from "./components/about";
 import BagesTechs from "./components/badge-technologies";
 import Contact from "./components/contact";
-import RenderCards from "./components/render-cards";
+import ProjectCards from "./components/project-cards";
+import { useEffect, useState } from "react";
+import ExperienceCards from "./components/experience-cards";
+import EducationCards from "./components/education-cards";
 
 export default function Home() {
+  const [ category, setCategory ] = useState('project')
+  function renderCard(type: string = 'project' || 'experience' || 'education'){
+    console.log('category - ', type)
+    switch (type) {
+      case 'project': 
+        return < ProjectCards/>
+        break;
+      case 'experience': 
+        return < ExperienceCards />
+        break;
+      case 'education': 
+        return < EducationCards />
+      break;
+      default: 
+      return < ProjectCards/>
+      break;
+    }
+  }
+
+  // useEffect(() => {
+
+  // }, [])
 
   return (
     <>
@@ -19,17 +44,11 @@ export default function Home() {
         </div>
         {/* Right section */}
         <div className="w-full self-start col-span-2 flex flex-col gap-8">
-          < About />
-          < RenderCards />
+          < About setData={ setCategory }   />
+          { renderCard(category) }
         </div>
-      
-
       </div>
     </div>
-
-
-
-    
     </>
   );
 }
