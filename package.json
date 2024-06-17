@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@preline/theme-switch": "^2.3.0",
+    "@preline/tooltip": "^2.3.0",
     "next": "14.2.4",
     "preline": "^2.3.0",
     "react": "^18",
