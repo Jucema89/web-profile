@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Profile from "./components/profile";
 import About from "./components/about";
+import BagesTechs from "./components/badge-technologies";
+import Contact from "./components/contact";
+import RenderCards from "./components/render-cards";
 
 export default function Home() {
 
@@ -11,14 +14,14 @@ export default function Home() {
         {/* left section */}
         <div className="w-full self-start">
           <Profile />
+          < BagesTechs />
+          < Contact />
         </div>
         {/* Right section */}
-        <div className="w-full self-start col-span-2">
+        <div className="w-full self-start col-span-2 flex flex-col gap-8">
           < About />
+          < RenderCards />
         </div>
-       
-        
-
       
 
       </div>
