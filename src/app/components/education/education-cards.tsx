@@ -10,7 +10,7 @@ export default function EducationCards(){
                 <h3 className="text-lg font-bold text-gray-800 mb-4 dark:text-white">
                 Educacion
                 </h3>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-4">
                    {
                     certifications.map((cert) => (
                         <a key={cert.id} className="group my-2 flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800" href={cert.url} target="_blank">

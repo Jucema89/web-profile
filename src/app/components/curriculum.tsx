@@ -6,13 +6,9 @@ export default function Curriculum(){
 
     const setStyle = (id: string): string => {
       if(id === lang){
-        return `
-          py-2 px-3 inline-flex justify-center items-center gap-2 -ms-px first:rounded-s-lg first:ms-0 last:rounded-e-lg text-sm font-medium focus:z-10 border border-gray-200 bg-gray-50 text-black shadow-sm active:text-black active:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800
-        `
+        return `py-1.5 px-2 inline-flex justify-center items-center gap-2 -ms-px first:rounded-s-lg first:ms-0 last:rounded-e-lg text-xs font-medium focus:z-10 border border-gray-200 bg-gray-50 text-black shadow-sm active:text-black active:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800`
       } else {
-        return `
-          py-2 px-3 inline-flex justify-center items-center gap-2 -ms-px first:rounded-s-lg first:ms-0 last:rounded-e-lg text-sm font-medium focus:z-10 border border-gray-200 bg-transparent text-white shadow-sm active:text-black active:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800
-        `
+        return `py-1.5 px-2 inline-flex justify-center items-center gap-2 -ms-px first:rounded-s-lg first:ms-0 last:rounded-e-lg text-xs font-medium focus:z-10 border border-gray-200 bg-transparent text-white shadow-sm active:text-black active:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800`
       }
     }
 
@@ -36,7 +32,7 @@ export default function Curriculum(){
         <h3 className="text-lg font-bold mb-4 text-white dark:text-white">
           Curriculum
         </h3>
-        <div className="flex gap-4">
+        <div className="flex justify-around">
             <div className="inline-flex rounded-lg shadow-sm">
               <div className="inline-flex rounded-lg shadow-sm">
                 <button type="button" className={setStyle('ES')}
@@ -52,7 +48,7 @@ export default function Curriculum(){
               </div>
             </div>
 
-            <button type="button" className="relative group p-2 ps-3 inline-flex items-center gap-x-2 text-md font-mono rounded-lg border border-gray-200 bg-transparent text-white shadow-sm  disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+            <button type="button" className="relative group p-2 ps-3 inline-flex items-center gap-x-2 text-md sm:text-sm font-mono rounded-lg border border-gray-200 bg-transparent text-white shadow-sm  disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
             onClick={() => downloadCV()}>
                 $ Download cv julio-daza
                 <span className="flex justify-center items-center text-black bg-gray-200 rounded-md size-7 dark:bg-neutral-700 dark:text-neutral-400">

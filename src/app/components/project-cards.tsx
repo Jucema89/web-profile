@@ -9,12 +9,12 @@ export default function ProjectCards(){
                 <h3 className="text-lg font-bold text-gray-800 mb-4 dark:text-white">
                 Proyectos
                 </h3>
-                <div className="grid grid-cols-2 gap-4">
-                    <div className="flex flex-row col-span-2 bg-white border hover:shadow-md transition shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-                        <img className="w-[40%] h-auto rounded-l-lg" src="/images/proyecto_aitrain_pc.png" alt="Aitrain App" />
+                <div className="lg:grid lg:grid-cols-2 lg:gap-4 md:flex-col md:gap-2">
+                    <div className="lg:flex lg:flex-row md:flex-col lg:col-span-2 bg-white border hover:shadow-md transition shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                        <img className="lg:w-[40%] md:w-full h-auto rounded-l-lg" src="/images/proyecto_aitrain_pc.png" alt="Aitrain App" />
                         <div className="p-4 md:p-5">
                             <div className="flex flex-1 justify-around">
-                            <h3 className="text-lg font-bold text-gray-800 dark:text-white">
+                            <h3 className="md:text-sm lg:text-lg font-bold text-gray-800 dark:text-white">
                             Aitrain: Plataforma de Finetuning para IA 
                             </h3>
                             <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-green-50 border border-green-600 text-green-600 dark:text-green-500">Open Source</span>
@@ -84,7 +84,7 @@ export default function ProjectCards(){
                         
                             <div className="flex flex-1 w-full justify-around mt-2">
 
-                                <Link className="inline-flex items-center gap-x-1 text-sm text-gray-800 hover:text-blue-600 dark:text-neutral-200 dark:hover:text-blue-500" href="https://github.com/Jucema89/aitrain" target="_blank">
+                                <Link className="inline-flex items-center gap-x-1 md:text-xs lg:text-sm  text-gray-800 hover:text-blue-600 dark:text-neutral-200 dark:hover:text-blue-500" href="https://github.com/Jucema89/aitrain" target="_blank">
                                 <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                                     </svg>
@@ -128,8 +128,8 @@ export default function ProjectCards(){
                                 </div>
 
                                 <div className="flex flex-1 justify-start gap-2 mt-2">
-                                 {['Node.Js', 'Angular', 'Next.js', 'Linux', 'Mysql'].map((tech, i) => (
-                                    <span key={i} className="inline-flex my-1 items-center gap-x-1.5 py-0.5 px-1.5 rounded-full border border-black text-[12px] font-medium  text-black"> 
+                                 {['Node.Js', 'Angular', 'Next.js',, 'Mysql'].map((tech, i) => (
+                                    <span key={i} className="inline-flex my-1 items-center gap-x-1.5 py-0.5 px-1.5 rounded-full border border-black md:text-[10px] lg:text-[12px] font-medium  text-black"> 
                                     {tech} 
                                 </span>
                                  ))}
@@ -161,11 +161,11 @@ export default function ProjectCards(){
                                     <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 border border-blue-600 text-blue-600 dark:text-blue-500">Private</span>
                                 </div>
 
-                                <div className="flex flex-1 justify-start gap-2 mt-2">
-                                 {['Node.Js', 'Angular', 'Linux', 'Mongo'].map((tech, i) => (
-                                    <span key={i} className="inline-flex my-1 items-center gap-x-1.5 py-0.5 px-1.5 rounded-full border border-black text-[12px] font-medium  text-black"> 
-                                    {tech} 
-                                </span>
+                                <div className="flex flex-1 justify-start gap-2 mt-2 lg:max-w-full md:max-w-[70vw]">
+                                 {['Node.Js', 'Angular', 'Mongo'].map((tech, i) => (
+                                    <span key={i} className="inline-flex my-1 items-center gap-x-1.5 py-0.5 px-1.5 rounded-full border border-black md:text-[10px] lg:text-[12px]  font-medium  text-black"> 
+                                        {tech} 
+                                    </span>
                                  ))}
                                 </div>
                                 </div>
@@ -178,38 +178,7 @@ export default function ProjectCards(){
                             </div>
                         </div>
                     </Link>
-
-                {/* <div className="bg-white border col-span-2 rounded-xl shadow-sm sm:flex dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-                <div className="flex-shrink-0 relative w-full rounded-t-xl overflow-hidden pt-[40%] sm:rounded-s-xl sm:max-w-60 md:rounded-se-none md:max-w-xs">
-                    <Image className="size-full absolute top-0 start-0 object-cover" src="/images/proyect_colduty.png" width={400} height={200} alt="Image Description" />
                 </div>
-                <div className="flex flex-wrap">
-                    <div className="p-4 flex flex-col h-full sm:p-7">
-                    <h3 className="text-lg font-bold text-gray-800 dark:text-white">
-                        Card title
-                    </h3>
-                    <p className="mt-1 text-gray-500 dark:text-neutral-400">
-                        Some quick example text to build on the card title and make up the bulk of the cards content.
-                    </p>
-                    <div className="mt-5 sm:mt-auto">
-                        <p className="text-xs text-gray-500 dark:text-neutral-500">
-                        Last updated 5 mins ago
-                        </p>
-                    </div>
-                    </div>
-                </div>
-                </div> */}
-
-
-
-
-
-
-
-                </div>
-
-                
-               
             </div>
         </div>
     )

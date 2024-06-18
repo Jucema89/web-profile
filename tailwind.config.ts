@@ -17,6 +17,11 @@ const config: Config = {
     },
     
   },
+  screens: {
+    md: "768px",
+    lg: "1024px",
+    sm: "500px"
+  },
   plugins: [
     require('preline/plugin'),
   ],
