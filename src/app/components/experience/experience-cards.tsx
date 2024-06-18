@@ -2,12 +2,12 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import React, { useEffect, useState, useRef } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import ApexCharts from 'apexcharts';
 import { Works, ExperienceWork } from "./works";
+import useWindowSize from "@/utils/windows-size";
 
 export default function ExperienceCards() {
+    const deviceType = useWindowSize()
     const [series, setSeries] = useState([{ name: "Stats Dev", data: [0] }])
     const works = Works
     const chartRef = useRef(null)
@@ -47,11 +47,15 @@ export default function ExperienceCards() {
     }, []);
 
     useEffect(() => {
-        if (chart) {
+        if (chart && deviceType === 'pc') {
             chart.updateOptions({
                 series: series
             });
+        } else {
+            chart?.destroy()
         }
+
+
     }, [series]); 
 
     function setData(work: ExperienceWork) {
@@ -109,6 +113,7 @@ export default function ExperienceCards() {
                     </div>
                     {/* Contenedor para el gráfico de radar */}
                     <div className="rounded-md shadow-md px-4 py-2 bg-gray-50">
+
                         <div id="chart_base" ref={chartRef}></div>
                         <div>
                             <p className="text-black font-semibold text-md">Funciones</p>
