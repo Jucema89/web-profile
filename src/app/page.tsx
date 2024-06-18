@@ -32,6 +32,7 @@ export default function Home() {
       break;
     }
   }
+
   if(deviceType === 'pc'){
     return (
       <>
