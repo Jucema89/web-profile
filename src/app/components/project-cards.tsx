@@ -11,7 +11,7 @@ export default function ProjectCards(){
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
                     <div className="flex flex-row col-span-2 bg-white border hover:shadow-md transition shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-                        <Image className="w-50 h-auto rounded-l-lg" src="/images/proyecto_aitrain_pc.png" alt="Image Description" width={400} height={200} />
+                        <img className="w-[40%] h-auto rounded-l-lg" src="/images/proyecto_aitrain_pc.png" alt="Aitrain App" />
                         <div className="p-4 md:p-5">
                             <div className="flex flex-1 justify-around">
                             <h3 className="text-lg font-bold text-gray-800 dark:text-white">

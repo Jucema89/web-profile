@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <head>
       </head>
-      <body className={inter.className + ' bg-gradient-to-r from-[#efeeee] via-[#e2e2e2] to-[#d6d6d6]'}>{children}</body>
+      <body className={inter.className + ' bg-gray-100'}>{children}</body>
       <PrelineScript />
     </html>
   );

@@ -5,7 +5,7 @@ export default function Profile(){
         <div className="z-10 max-w-md w-full bg-white border border-gray-100 text-start rounded-xl shadow-md after:absolute after:top-0 after:-start-4 after:w-4 after:h-full dark:bg-neutral-800 dark:border-neutral-700">
           <div className="py-3 px-4 border-b border-gray-200 dark:border-neutral-700">
             <div className="flex items-center gap-x-3">
-              <Image className="flex-shrink-0 inline-block size-20 rounded-full ring-2 ring-white dark:ring-neutral-900" src="/images/profile-julio-daza.png" width={120} height={120} alt="Julio Daza Profile" />
+              <Image className="flex-shrink-0 inline-block size-20 rounded-full ring-2 ring-white dark:ring-neutral-900" src="/images/profile-julio-daza.png" width={100} height={120} alt="Julio Daza Profile" />
               <div className="grow">
                 <h2 className="font-semibold text-xl text-gray-800 dark:text-white">
                   Julio Daza
