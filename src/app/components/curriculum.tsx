@@ -1,4 +1,6 @@
-import { useState } from "react"
+'use client'
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
 export default function Curriculum(){
 
@@ -11,20 +13,6 @@ export default function Curriculum(){
         return `py-1.5 px-2 inline-flex justify-center items-center gap-2 -ms-px first:rounded-s-lg first:ms-0 last:rounded-e-lg text-xs font-medium focus:z-10 border border-gray-200 bg-transparent text-white shadow-sm active:text-black active:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800`
       }
     }
-
-
-    function downloadCV(){
-      switch (lang) {
-        case 'ES':
-          window.open(`http://localhost:3000/docs/CV_Julio_Daza_ES.pdf`, '_blank')
-          break;
-
-        case 'EN':
-          window.open(`http://localhost:3000/docs/CV_Julio_Daza_EN.pdf`, '_blank')
-          break;
-      }
-    }
-
     return(
       <>
       <div className="z-10 mt-10 max-w-md w-full bg-black border border-gray-100 text-start rounded-xl shadow-md after:absolute after:top-0 after:-start-4 after:w-4 after:h-full dark:bg-neutral-800 dark:border-neutral-700">
@@ -48,8 +36,8 @@ export default function Curriculum(){
               </div>
             </div>
 
-            <button type="button" className="relative group p-2 ps-3 inline-flex items-center gap-x-2 text-md sm:text-sm font-mono rounded-lg border border-gray-200 bg-transparent text-white shadow-sm  disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
-            onClick={() => downloadCV()}>
+            <Link type="button" className="relative group p-2 ps-3 inline-flex items-center gap-x-2 text-md sm:text-sm font-mono rounded-lg border border-gray-200 bg-transparent text-white shadow-sm  disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800"
+            href={`${process.env.NEXT_PUBLIC_APP_URL}/docs/CV_Julio_Daza_${lang}.pdf`} target="_blank">
                 $ Download cv julio-daza
                 <span className="flex justify-center items-center text-black bg-gray-200 rounded-md size-7 dark:bg-neutral-700 dark:text-neutral-400">
 
@@ -57,7 +45,7 @@ export default function Curriculum(){
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
                   </svg>
                 </span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
