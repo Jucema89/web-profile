@@ -30,7 +30,7 @@ export default function About({ setData }: { setData: Dispatch<SetStateAction<st
                 Soy un gran aficionado de Linux, con conocimientos en AWS y amplia experiencia 
                 en CI/CD en VPS privados.
                 </p>
-                <div className="inline-flex rounded-lg shadow-sm mt-6">
+                <div className="inline-flex rounded-lg shadow-sm mt-6 md:text-center xs:text-center lg:text-left">
                     <button type="button" className={`py-3 px-4 inline-flex items-center gap-x-2 -ms-px first:rounded-s-lg first:ms-0 last:rounded-e-lg text-sm font-medium focus:z-10 border border-gray-200 shadow-sm hover:text-white hover:bg-gray-400 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 
                         ${validateActive('projects')}`
                     } onClick={ () => setValues('projects') }>

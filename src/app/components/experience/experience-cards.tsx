@@ -21,7 +21,7 @@ export default function ExperienceCards() {
 
   const selected = (idName: string): string => {
     if (idName === series[0].name) {
-      return `flex gap-x-3 relative group rounded-lg bg-gray-100 text-black  dark:hover:bg-white/10`;
+      return `flex gap-x-3 relative group rounded-lg bg-gray-100 text-black dark:hover:bg-white/10 dark:bg-[#030c26]`;
     } else {
       return `flex gap-x-3 relative text-gray-700 group rounded-lg hover:bg-gray-100 dark:hover:bg-white/10`;
     }
@@ -88,7 +88,7 @@ export default function ExperienceCards() {
 
                     <div className="relative last:after:hidden after:absolute after:top-0 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-gray-200 dark:after:bg-neutral-700 dark:group-hover:after:bg-neutral-600">
                       <div className="relative z-10 size-7 flex justify-center items-center">
-                        <div className="size-2 rounded-full bg-white border-2 border-gray-300 group-hover:border-gray-600 dark:bg-neutral-800 dark:border-neutral-600 dark:group-hover:border-neutral-600"></div>
+                        <div className="size-2 rounded-full bg-white border-2 border-gray-300 group-hover:border-gray-600 dark:bg-neutral-800 dark:border-neutral-600 dark:group-hover:border-neutral-600 dark:active:bg-gray-900"></div>
                       </div>
                     </div>
 
@@ -111,11 +111,11 @@ export default function ExperienceCards() {
             ))}
           </div>
           {/* Contenedor para el gráfico de radar */}
-          <div className="rounded-md shadow-md px-4 py-2 bg-gray-50">
+          <div className="rounded-md shadow-md px-4 py-2 bg-gray-50 dark:bg-[#030c26] dark:text-white">
             <div id="chart_base" ref={chartRef}></div>
             <div>
-              <p className="text-black font-semibold text-md">Funciones</p>
-              <p className="text-sm text-black px-2">{workDescription}</p>
+              <p className="text-black dark:text-white font-semibold text-md">Funciones</p>
+              <p className="text-sm text-black px-2 dark:text-white">{workDescription}</p>
             </div>
           </div>
         </div>

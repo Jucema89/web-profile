@@ -67,7 +67,7 @@ export default function Home() {
             < BagesTechs />
           </div>
           {/* Right section */}
-          <div className="w-full self-start col-span-2 flex flex-col md:gap-2 lg:gap-8">
+          <div className="w-full self-start col-span-2 flex flex-col gap-4 lg:gap-8">
             < About setData={ setCategory }   />
             { renderCard(category) }
             < Curriculum />
