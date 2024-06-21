@@ -13,7 +13,7 @@ export default function EducationCards(){
                 <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-4">
                    {
                     certifications.map((cert) => (
-                        <a key={cert.id} className="group my-2 flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800" href={cert.url} target="_blank">
+                        <a key={cert.id} className="group my-2 flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800 dark:hover:bg-[#030c26] dark:hover:text-white" href={cert.url} target="_blank">
                         <div className="hs-tooltip-toggle p-4 md:p-5">
                             <div className="flex justify-between items-center">
                             <div className="flex items-center">

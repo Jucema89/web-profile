@@ -8,14 +8,14 @@ export default function Curriculum(){
 
     const setStyle = (id: string): string => {
       if(id === lang){
-        return `py-1.5 px-2 inline-flex justify-center items-center gap-2 -ms-px first:rounded-s-lg first:ms-0 last:rounded-e-lg text-xs font-medium focus:z-10 border border-gray-200 bg-gray-50 text-black shadow-sm active:text-black active:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800`
+        return `py-1.5 px-2 inline-flex justify-center items-center gap-2 -ms-px first:rounded-s-lg first:ms-0 last:rounded-e-lg text-xs font-medium focus:z-10 border border-gray-200 bg-gray-50 text-black shadow-sm active:text-black active:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-white dark:border-neutral-700 dark:text-black dark:hover:bg-white`
       } else {
-        return `py-1.5 px-2 inline-flex justify-center items-center gap-2 -ms-px first:rounded-s-lg first:ms-0 last:rounded-e-lg text-xs font-medium focus:z-10 border border-gray-200 bg-transparent text-white shadow-sm active:text-black active:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800`
+        return `py-1.5 px-2 inline-flex justify-center items-center gap-2 -ms-px first:rounded-s-lg first:ms-0 last:rounded-e-lg text-xs font-medium focus:z-10 border border-gray-200 bg-transparent text-white shadow-sm active:text-black active:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-900`
       }
     }
     return(
       <>
-      <div className="z-10 mt-10 max-w-md w-full bg-black border border-gray-100 text-start rounded-xl shadow-md after:absolute after:top-0 after:-start-4 after:w-4 after:h-full dark:bg-neutral-800 dark:border-neutral-700">
+      <div className="z-10 mt-10 max-w-md w-full bg-black border border-gray-100 text-start rounded-xl shadow-md after:absolute after:top-0 after:-start-4 after:w-4 after:h-full dark:bg-neutral-900 dark:border-neutral-700">
         <div className="p-4 md:p-7">
         <h3 className="text-lg font-bold mb-4 text-white dark:text-white">
           Curriculum

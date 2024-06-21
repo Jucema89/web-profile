@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -19,8 +20,7 @@ const config: Config = {
   },
   screens: {
     md: "768px",
-    lg: "1024px",
-    sm: "500px"
+    lg: "1024px"
   },
   plugins: [
     require('preline/plugin'),

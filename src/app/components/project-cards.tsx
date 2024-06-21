@@ -121,7 +121,7 @@ export default function ProjectCards(){
                                 Colduty: Saas de Tributacion Empresarial
                                 </h3>
                                 <div className="flex flex-1 justify-start gap-4">
-                                    <p className="text-sm text-gray-500 dark:text-neutral-500">
+                                    <p className="text-sm text-gray-500 dark:text-neutral-400">
                                     FullStack Javascript
                                     </p>
                                     <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 border border-blue-600 text-blue-600 dark:text-blue-500">Private</span>
@@ -129,7 +129,7 @@ export default function ProjectCards(){
 
                                 <div className="flex flex-1 justify-start gap-2 mt-2">
                                  {['Node.Js', 'Angular', 'Next.js',, 'Mysql'].map((tech, i) => (
-                                    <span key={i} className="inline-flex my-1 items-center gap-x-1.5 py-0.5 px-1.5 rounded-full border border-black md:text-[10px] lg:text-[12px] font-medium  text-black"> 
+                                    <span key={i} className="inline-flex my-1 items-center gap-x-1.5 py-0.5 px-1.5 rounded-full border border-black md:text-[10px] lg:text-[12px] font-medium  text-black dark:text-white dark:border-gray-50 dark:bg-gray-800"> 
                                     {tech} 
                                 </span>
                                  ))}
@@ -155,7 +155,7 @@ export default function ProjectCards(){
                                 Geven: Gestor de Ventas online y POS
                                 </h3>
                                 <div className="flex flex-1 justify-start gap-4">
-                                    <p className="text-sm text-gray-500 dark:text-neutral-500">
+                                    <p className="text-sm text-gray-500 dark:text-neutral-400">
                                     FullStack Javascript
                                     </p>
                                     <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 border border-blue-600 text-blue-600 dark:text-blue-500">Private</span>
@@ -163,7 +163,7 @@ export default function ProjectCards(){
 
                                 <div className="flex flex-1 justify-start gap-2 mt-2 lg:max-w-full md:max-w-[70vw]">
                                  {['Node.Js', 'Angular', 'Mongo'].map((tech, i) => (
-                                    <span key={i} className="inline-flex my-1 items-center gap-x-1.5 py-0.5 px-1.5 rounded-full border border-black md:text-[10px] lg:text-[12px]  font-medium  text-black"> 
+                                    <span key={i} className="inline-flex my-1 items-center gap-x-1.5 py-0.5 px-1.5 rounded-full border border-black md:text-[10px] lg:text-[12px]  font-medium  text-black dark:text-white dark:border-gray-50 dark:bg-gray-800"> 
                                         {tech} 
                                     </span>
                                  ))}
