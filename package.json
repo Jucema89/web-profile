@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@preline/overlay": "^2.3.0",
     "@preline/theme-switch": "^2.3.0",
     "@preline/tooltip": "^2.3.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "apexcharts": "^3.49.1",
     "next": "14.2.4",
     "preline": "^2.3.0",

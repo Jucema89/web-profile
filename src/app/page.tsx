@@ -3,7 +3,7 @@ import Profile from "./components/profile";
 import About from "./components/about";
 import BagesTechs from "./components/badge-technologies";
 import Curriculum from "./components/curriculum";
-import ProjectCards from "./components/project-cards";
+import ProjectCards from "./components/projects/project-cards";
 import { useState } from "react";
 import ExperienceCards from "./components/experience/experience-cards";
 import EducationCards from "./components/education/education-cards";

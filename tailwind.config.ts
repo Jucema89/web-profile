@@ -9,6 +9,13 @@ const config: Config = {
     './node_modules/preline/preline.js',
   ],
   theme: {
+    screens: {
+      xs: '375px',
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -18,11 +25,8 @@ const config: Config = {
     },
     
   },
-  screens: {
-    md: "768px",
-    lg: "1024px"
-  },
   plugins: [
+    require('@tailwindcss/aspect-ratio'),
     require('preline/plugin'),
   ],
 };
