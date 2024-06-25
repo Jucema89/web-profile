@@ -1,12 +1,37 @@
+/* eslint-disable @next/next/no-img-element */
+'use client'
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Project, ProjectsData } from "./projects";
+import ModalProject, { DataProject } from "../modal-project";
+import { IStaticMethods } from "preline";
 
-/* eslint-disable @next/next/no-img-element */
+declare global {
+    interface Window {
+      HSStaticMethods: IStaticMethods;
+    }
+}
+
+
 export default function ProjectCards(){
+    const [ projects, setProjects ] = useState(ProjectsData)
+    const [ modal, setModal ] = useState<DataProject>({
+        open: false,
+        data: projects[0]
+    })
+
+    function setModalData(proj: Project){
+        setModal({
+            open: true,
+            data: proj
+        })
+    }
+ 
     return(
         <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
             <div className="p-4 md:p-6">
-                <h3 className="text-lg font-bold text-gray-800 mb-4 dark:text-white">
+                <h3 className="text-lg text-center font-bold text-gray-800 mb-4 dark:text-white">
                 Proyectos
                 </h3>
                 <div className="lg:grid lg:grid-cols-2 lg:gap-4 md:flex-col md:gap-2">
@@ -15,15 +40,15 @@ export default function ProjectCards(){
                         <div className="p-4 md:p-5">
                             <div className="flex flex-1 justify-around">
                             <h3 className="md:text-sm lg:text-lg font-bold text-gray-800 dark:text-white">
-                            Aitrain: Plataforma de Finetuning para IA 
+                            Aitrain: Plataforma de Finetuning para IA
                             </h3>
-                            <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-green-50 border border-green-600 text-green-600 dark:text-green-500">Open Source</span>
+                            <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-green-50 border border-green-600 text-green-600 dark:text-green-500">Open</span>
                             </div>
-                        
+
                             <p className="mt-1 text-sm text-gray-500 dark:text-neutral-400">
                             Aplicación para crear archivos de finetuning usando documentos, para luego enviarlos a OpenAI para entrenamiento de un modelos en particular.
                             </p>
-                    
+
                             <div className="flex flex-1 w-full justify-around">
                                 <div className="relative py-4 md:py-4 overflow-hidden text-center items-center w-full dark:before:from-neutral-900 dark:after:from-neutral-900">
                                 <small className=" text-gray-400 py-2 self-center">Stack Tecnológico</small>
@@ -81,7 +106,7 @@ export default function ProjectCards(){
                                     </div>
                                 </div>
                             </div>
-                        
+
                             <div className="flex flex-1 w-full justify-around mt-2">
 
                                 <Link className="inline-flex items-center gap-x-1 md:text-xs lg:text-sm  text-gray-800 hover:text-blue-600 dark:text-neutral-200 dark:hover:text-blue-500" href="https://github.com/Jucema89/aitrain" target="_blank">
@@ -110,74 +135,47 @@ export default function ProjectCards(){
                             </div>
                         </div>
                     </div>
+                    {
+                        projects.map((project) => (
+                        <button key={project.id} className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800 xs:my-2 md:my-0 lg:my-0 xs:w-[92vw] lg:w-auto md:w-auto"
+                        onClick={ () => setModalData(project) }>
+                            <div className="hs-tooltip-toggle p-4 md:p-5">
+                                <div className="flex justify-between items-center">
+                                <div className="flex items-center">
+                                    <img className="size-[38px] rounded-full" src={project.logo} alt={project.title} />
+                                    <div className="ms-3">
+                                    <h3 className="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+                                    { project.title }
+                                    </h3>
+                                    <div className="flex flex-1 justify-start gap-4">
+                                        <p className="text-sm text-gray-500 dark:text-neutral-400">
+                                        { project.subtitle }
+                                        </p>
+                                        <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 border border-blue-600 text-blue-600 dark:text-blue-500">
+                                            { project.type }
+                                        </span>
+                                    </div>
 
-                    <Link className="group my-2 flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800" href={'https://colduty.com/'} target="_blank">
-                        <div className="hs-tooltip-toggle p-4 md:p-5">
-                            <div className="flex justify-between items-center">
-                            <div className="flex items-center">
-                                <img className="size-[38px] rounded-full" src="/images/logo-colduty.png" alt="Image Description" />
-                                <div className="ms-3">
-                                <h3 className="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
-                                Colduty: Saas de Tributacion Empresarial
-                                </h3>
-                                <div className="flex flex-1 justify-start gap-4">
-                                    <p className="text-sm text-gray-500 dark:text-neutral-400">
-                                    FullStack Javascript
-                                    </p>
-                                    <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 border border-blue-600 text-blue-600 dark:text-blue-500">Private</span>
+                                    <div className="flex flex-1 justify-start gap-2 mt-2">
+                                        { project.techs.map((tech, i) => (
+                                            <span key={i} className="inline-flex my-1 items-center gap-x-1.5 py-0.5 px-1.5 rounded-full border border-black md:text-[8px] xs:text-[10px] sm:text-[10px] lg:text-[12px] font-medium  text-black dark:text-white dark:border-gray-50 dark:bg-gray-800">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    </div>
                                 </div>
-
-                                <div className="flex flex-1 justify-start gap-2 mt-2">
-                                 {['Node.Js', 'Angular', 'Next.js',, 'Mysql'].map((tech, i) => (
-                                    <span key={i} className="inline-flex my-1 items-center gap-x-1.5 py-0.5 px-1.5 rounded-full border border-black md:text-[10px] lg:text-[12px] font-medium  text-black dark:text-white dark:border-gray-50 dark:bg-gray-800"> 
-                                    {tech} 
-                                </span>
-                                 ))}
-                                
-                                </div>
-
-                                      </div>
-                            </div>
-                            <div className="ps-3">
-                                <svg className="flex-shrink-0 size-5 text-gray-800 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                            </div>
-                            </div>
-                        </div>
-                    </Link>
-
-                    <Link className="group my-2 flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800" href="http://geven.almacensanitario.com" target="_blank">
-                        <div className="p-4 md:p-5">
-                            <div className="flex justify-between items-center">
-                            <div className="flex items-center">
-                                <img className="size-[38px] rounded-full" src="/images/logo_geven.png" alt="Image Description" />
-                                <div className="ms-3">
-                                <h3 className="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
-                                Geven: Gestor de Ventas online y POS
-                                </h3>
-                                <div className="flex flex-1 justify-start gap-4">
-                                    <p className="text-sm text-gray-500 dark:text-neutral-400">
-                                    FullStack Javascript
-                                    </p>
-                                    <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 border border-blue-600 text-blue-600 dark:text-blue-500">Private</span>
-                                </div>
-
-                                <div className="flex flex-1 justify-start gap-2 mt-2 lg:max-w-full md:max-w-[70vw]">
-                                 {['Node.Js', 'Angular', 'Mongo'].map((tech, i) => (
-                                    <span key={i} className="inline-flex my-1 items-center gap-x-1.5 py-0.5 px-1.5 rounded-full border border-black md:text-[10px] lg:text-[12px]  font-medium  text-black dark:text-white dark:border-gray-50 dark:bg-gray-800"> 
-                                        {tech} 
-                                    </span>
-                                 ))}
+                                <div className="ps-3">
+                                    <svg className="flex-shrink-0 size-5 text-gray-800 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                                 </div>
                                 </div>
+                            </div>
 
-                                
-                            </div>
-                            <div className="ps-3">
-                                <svg className="flex-shrink-0 size-5 text-gray-800 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                            </div>
-                            </div>
-                        </div>
-                    </Link>
+                        </button>
+                        ))
+                    }
+                    < ModalProject modal={ modal } />
                 </div>
             </div>
         </div>

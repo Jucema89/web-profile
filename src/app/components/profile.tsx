@@ -23,7 +23,7 @@ export default function Profile(){
                   Julio Daza
                 </h2>
                 <span className="ms-0.5 inline-flex items-center align-middle gap-x-1.5 py-0.5 px-1.5 rounded-md text-[11px] font-medium bg-gray-800 text-white dark:bg-white dark:text-neutral-800">
-                  Javascript Developer
+                  Frontend Developer
                 </span>
                 <p className="text-sm text-gray-500 dark:text-neutral-500">
                   5 años de exp

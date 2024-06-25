@@ -27,7 +27,7 @@ export const Works: ExperienceWork[] = [
     {
         id: 2,
         company: 'MPR Group',
-        logo: '/images/MPR_logo.jpg',
+        logo: '/images/logo_mpr.png',
         role: 'Frontend Angular',
         start_date: 'Sep 2021',
         end_date: 'Sep 2023',
