@@ -48,4 +48,16 @@ export const Works: ExperienceWork[] = [
         type_work: 'fulltime',
         stats: [45, 10, 25, 10, 35, 10]
     },
+    {
+        id: 3,
+        company: 'Independiente Freelance',
+        logo: '/images/logo_julio_daza.png',
+        role: 'Frontend Angular & Web Developer',
+        start_date: 'Ene 2020',
+        end_date: 'Feb 2021',
+        location: 'Remote',
+        description: 'Desarrollé aplicaciones y web landings utilizando Angular y otras tecnologías de JavaScript. Usando WordPress creé sitios corporativos, me familiaricé con Electron.js para un proyecto de app de escritorio y profundicé en CSS, Sass y librerías de estilos como Bootstrap y Angular Material.',
+        type_work: 'fulltime',
+        stats: [45, 20, 45, 20, 35, 5]
+    },
 ]
