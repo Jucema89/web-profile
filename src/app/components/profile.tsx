@@ -7,10 +7,12 @@ export default function Profile(){
   const [ theme, setTheme ] = useState('ligth')
 
   function settingTheme(newTheme: 'ligth' | 'dark'){
-    const html = document.querySelector('html') as HTMLElement
-    html.classList.remove(theme)
-    html?.classList.add(newTheme)
-    setTheme(newTheme)
+    if (typeof document !== "undefined") {
+      const html = document.querySelector('html') as HTMLElement
+      html.classList.remove(theme)
+      html?.classList.add(newTheme)
+      setTheme(newTheme)
+    }
   }
 
     return(
@@ -25,9 +27,6 @@ export default function Profile(){
                 <span className="ms-0.5 inline-flex items-center align-middle gap-x-1.5 py-0.5 px-1.5 rounded-md text-[11px] font-medium bg-gray-800 text-white dark:bg-white dark:text-neutral-800">
                   Frontend Developer
                 </span>
-                <p className="text-sm text-gray-500 dark:text-neutral-500">
-                  5 años de exp
-                </p>
               </div>
 
               <div className="hs-dropdown">

@@ -20,17 +20,19 @@ export interface DataProject {
 export default function ModalProject({ modal }: { modal: DataProject}){
 
     useEffect(() => {
-        window.HSStaticMethods?.autoInit()
+        window.HSStaticMethods.autoInit()
         if(modal.open){
-            const getModal = document.getElementById('hs-modal-projects') as HTMLElement
+            const getModal = document.querySelector('#hs-modal-projects') as HTMLElement
             HSOverlay.open(getModal)
         }
-
+     
     }, [ modal ])
 
     function closeModal(){
-        const getModal = document.getElementById('hs-modal-projects') as HTMLElement
-        HSOverlay.close(getModal)
+        if (typeof document !== "undefined") {
+            const getModal = document.querySelector('#hs-modal-projects') as HTMLElement
+            HSOverlay.close(getModal)
+        }
     }
 
     return(
