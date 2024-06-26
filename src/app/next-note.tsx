@@ -1,3 +1,4 @@
+'use client'
 export default function NextHere(){
     return (
         <div className="flex px-4 self-start items-left justify-evenly m-0">

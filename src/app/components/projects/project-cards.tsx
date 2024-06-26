@@ -1,18 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import Image from "next/image";
 import Link from "next/link";
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from "react";
-import { Project, ProjectsData } from "./projects";
-import ModalProject, { DataProject } from "../modal-project";
 import { IStaticMethods } from "preline";
+import { Project, ProjectsData } from "./projects";
+import { DataProject } from "../modal-project";
+
+const ModalProjectComponent = dynamic(() => import('../modal-project'), {
+  ssr: false
+})
 
 declare global {
     interface Window {
       HSStaticMethods: IStaticMethods;
     }
 }
-
 
 export default function ProjectCards(){
     const [ projects, setProjects ] = useState(ProjectsData)
@@ -27,6 +30,15 @@ export default function ProjectCards(){
             data: proj
         })
     }
+
+    useEffect(() => {
+        if (typeof window !== "undefined"){
+            setModal({
+                open: false,
+                data: projects[0]
+            })
+        }
+    }, [ projects ])
  
     return(
         <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
@@ -175,7 +187,8 @@ export default function ProjectCards(){
                         </button>
                         ))
                     }
-                    < ModalProject modal={ modal } />
+                    {/* < ModalProject modal={ modal } /> */}
+                    < ModalProjectComponent modal={ modal } />
                 </div>
             </div>
         </div>
