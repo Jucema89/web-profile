@@ -20,10 +20,12 @@ export interface DataProject {
 export default function ModalProject({ modal }: { modal: DataProject}){
 
     useEffect(() => {
-        window.HSStaticMethods.autoInit()
-        if(modal.open){
-            const getModal = document.querySelector('#hs-modal-projects') as HTMLElement
-            HSOverlay.open(getModal)
+        if (typeof window !== "undefined" && window.HSStaticMethods && window.HSStaticMethods.autoInit) {
+            window.HSStaticMethods.autoInit()
+            if(modal.open){
+                const getModal = document.querySelector('#hs-modal-projects') as HTMLElement
+                HSOverlay.open(getModal)
+            }
         }
      
     }, [ modal ])
