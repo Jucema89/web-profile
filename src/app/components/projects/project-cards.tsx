@@ -157,18 +157,16 @@ export default function ProjectCards(){
                     <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4 py-4">
                     {
                         projects.map((project) => (
-                        <button key={project.id} className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800 xs:my-2 md:my-0 lg:my-0 xs:w-[92vw] lg:w-auto md:w-auto"
+                        <button key={project.id} className="group flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800 xs:my-2 md:my-0 lg:my-0 xs:w-[92vw] lg:w-auto md:w-auto"
                         onClick={ () => setModalData(project) }>
-
-                            <div className="hs-tooltip-toggle p-4 md:p-5">
-                                <div className="flex justify-start items-center">
-                                    <div className="flex items-center">
-                                        <img className="size-[38px] rounded-full" src={project.logo} alt={project.title} />
-                                        <div className="ms-3 flex-col justify-start">
-                                            <h3 className="group-hover:text-blue-600 font-semibold text-gray-800 lg:text-sm text-start text-lg dark:group-hover:text-neutral-400 dark:text-neutral-200">
-                                            { project.title }
-                                            </h3>
-                                            <div className="flex flex-1 justify-start gap-4">
+                            <div className="flex flex-row justify-between items-center px-2 py-4">
+                                <div className="flex items-center">
+                                    <img className="size-[38px] rounded-full" src={project.logo} alt={project.title} />
+                                    <div className="ms-3 flex-col justify-start">
+                                        <h3 className="group-hover:text-blue-600 font-semibold text-gray-800 lg:text-sm text-start text-lg dark:group-hover:text-neutral-400 dark:text-neutral-200">
+                                        { project.title }
+                                        </h3>
+                                        <div className="flex flex-1 justify-start gap-4">
                                             <p className="text-sm text-gray-500 dark:text-neutral-400">
                                             { project.subtitle }
                                             </p>
@@ -177,7 +175,7 @@ export default function ProjectCards(){
                                             </span>
                                         </div>
 
-                                        <div className="flex max-w-[10%] justify-start gap-2 mt-2">
+                                        <div className="flex max-w-[10%] justify-start gap-2 mt-4">
                                             { project.techs.map((tech, i) => (
                                                 <span key={i} className="my-1 items-center gap-x-1.5 py-0.5 px-1.5 rounded-full border border-black md:text-[8px] xs:text-[10px] sm:text-[10px] lg:text-[12px] font-medium  text-black dark:text-white dark:border-gray-50 dark:bg-gray-800">
                                                     {tech}
@@ -185,15 +183,14 @@ export default function ProjectCards(){
                                             ))}
                                         </div>
 
-                                        </div>
                                     </div>
-                                    {/* <div className="ps-3">
-                                        <svg className="flex-shrink-0 size-5 text-gray-800 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/>
-                                        </svg>
-                                    </div> */}
+                                </div>
+
+                                <div className="items-end mx-4">
+                                <svg className="size-5 text-gray-800 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/>
+                                </svg>
                                 </div>
                             </div>
-
                         </button>
                         ))
                     }
