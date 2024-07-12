@@ -64,6 +64,14 @@ export default function ModalProject({ modal }: { modal: DataProject}){
                     <a type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-black text-white hover:bg-gray-700  disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#hs-modal-projects" href={modal.data.url} target="_blank">
                         Ver Proyecto
                     </a>
+                    {
+                        modal.data.repoGit && (
+                            <a type="button" className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-black text-white hover:bg-gray-700  disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#hs-modal-projects" href={modal.data.repoGit} target="_blank">
+                            Ver Repositorio
+                        </a> 
+                        )
+                    }
+
                     <button className="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-gray-700  hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:text-blue-400 cursor-pointer" onClick={() => closeModal()}>
                         Cerrar
                     </button>

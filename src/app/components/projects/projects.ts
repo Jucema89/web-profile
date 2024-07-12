@@ -6,6 +6,7 @@ export interface Project {
     image: string
     logo: string
     url: string
+    repoGit?: string
     type: 'private' | 'public'
     techs: string[]
 }
@@ -15,10 +16,11 @@ export const ProjectsData: Project[] = [
         id: 1,
         title: 'LeadMan: Gestor de Leads',
         subtitle: 'FullStack Js',
-        description: 'Desarrolle frontend con Angular y Backend con Nodejs, el dashboard posee un sistema de roles y permisos, lista todos los leads que trae de una Sheet de Google, se redunda la data en una base de datos PostgreSql y se actualizan los estados desde la UI en la DB y en el Sheet de Google. Hay un Usuario de Prueba con user: jose@mail.com t pass: 123456',
+        description: 'Desarrollé frontend con Angular y backend con Node.js. El dashboard posee un sistema de roles y permisos, lista todos los leads que trae de una hoja de Google. Se redunda la data en una base de datos PostgreSQL y se actualizan los estados desde la UI en la DB y en la hoja de Google. Hay un usuario de prueba con user: jose@mail.com y pass: 123456.',
         type: 'private',
-        techs: [ 'Angular', 'Node.Js', 'PostgreSql', 'Tailwind' ],
-        url: 'https://colduty.com/',
+        techs: [ 'Angular', 'Node.Js', 'PostgreSql' ],
+        url: 'https://leadman.juliodaza.com/home',
+        repoGit: 'https://github.com/Jucema89/leadManager-app',
         image: '/images/success_case_leadman.png',
         logo: '/images/leadman_logo.png'
     },
