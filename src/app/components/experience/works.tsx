@@ -8,7 +8,8 @@ export interface ExperienceWork {
     location: string
     description: string
     type_work: 'partial' | 'fulltime' | 'per Hours'
-    stats: number[]
+    stats: number[],
+    techs: string[]
 }
 
 export const Works: ExperienceWork[] = [
@@ -22,7 +23,8 @@ export const Works: ExperienceWork[] = [
         location: 'Remote',
         description: 'Diseñé interfaces, definí tecnologías y creé la arquitectura junto al código central de las aplicaciones frontend utilizando Angular y Next.js. Establecí procesos de CI/CD y configuré conexiones a VPS para despliegues en ambientes de desarrollo. Además, me encargué de la creación del código central para el backend (Node.js con Express) y de microservicios.',
         type_work: 'fulltime',
-        stats: [55, 55, 40, 45, 45, 45]
+        stats: [55, 55, 40, 45, 45, 45],
+        techs:['Angular', 'React', 'Next.js', 'Node.Js', 'Redux', 'NgRx', 'Rxjs', 'Tailwind']
     },
     {
         id: 2,
@@ -34,7 +36,8 @@ export const Works: ExperienceWork[] = [
         location: 'Remote',
         description: 'Desarrollé y diseñé interfaces de aplicaciones utilizando Angular, definí la interfaz de usuario (UI) con Figma y creé componentes lógicos CORE de la aplicación. Integré el sistema de reactividad RxJS y el manejador de estados NgRx. También me encargué del consumo de APIs y de la programación de la lógica del frontend.',
         type_work: 'fulltime',
-        stats: [55, 35, 55, 10, 45, 10]
+        stats: [55, 35, 55, 10, 45, 10],
+        techs:['Angular', 'React', 'Next.js', 'Node.Js', 'Redux', 'NgRx']
     },
     {
         id: 3,
@@ -46,7 +49,8 @@ export const Works: ExperienceWork[] = [
         location: 'Remote',
         description: 'Desarrollé interfaces de aplicaciones utilizando Angular, incorporando el sistema de reactividad RxJS y el manejador de estados NgRx. Me ocupé del consumo de APIs y de la programación de la lógica del frontend. Además, implementé estilos acordes con los diseños proporcionados en Zeplin y Adobe XD.',
         type_work: 'fulltime',
-        stats: [45, 10, 25, 10, 35, 10]
+        stats: [45, 10, 25, 10, 35, 10],
+        techs:['Angular', 'Next.js', 'Node.Js', 'Saas', 'NgRx', 'RxJS']
     },
     {
         id: 3,
@@ -58,6 +62,7 @@ export const Works: ExperienceWork[] = [
         location: 'Remote',
         description: 'Desarrollé aplicaciones y web landings utilizando Angular y otras tecnologías de JavaScript. Usando WordPress creé sitios corporativos, me familiaricé con Electron.js para un proyecto de app de escritorio y profundicé en CSS, Sass y librerías de estilos como Bootstrap y Angular Material.',
         type_work: 'fulltime',
-        stats: [45, 20, 45, 20, 35, 5]
+        stats: [45, 20, 45, 20, 35, 5],
+        techs:['Angular',  'Node.Js', 'Saas', 'Electron']
     },
 ]

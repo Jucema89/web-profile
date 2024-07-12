@@ -37,14 +37,14 @@ export default function Home() {
     return (
       <>
       {/* Pc page */}
-      <div className="lg:max-w-[95rem] md:max-w-full lg:mx-10 lg:my-10 md:mx-4 md:my-5 md:px-8 lg:px-8">
+      <div className="lg:max-w-[95rem] md:max-w-full lg:mx-4 lg:my-4 md:my-5 md:px-8 lg:px-2">
         <div className="lg:grid lg:grid-cols-3 md:flex-col  gap-2 md:gap-2 lg:gap-8 md:items-center">
           {/* left section */}
           <div className="w-full self-start md:mx-4 md:my-4 lg:mx-0 lg:my-0">
             < Profile />
             < BagesTechs />
             < Curriculum />
-            < NextHere />
+            {/* < NextHere /> */}
           </div>
           {/* Right section */}
           <div className="w-full self-start col-span-2 flex flex-col gap-8">
@@ -71,7 +71,7 @@ export default function Home() {
             < About setData={ setCategory }   />
             { renderCard(category) }
             < Curriculum />
-            < NextHere />
+            {/* < NextHere /> */}
           </div>
         </div>
       </div>

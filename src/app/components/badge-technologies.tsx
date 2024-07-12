@@ -4,7 +4,7 @@ export default function BagesTechs(){
     'Javascript', 'Typescript', 'Angular', 'Next Js', 'Node Js', 'Express', 'Git', 'Linux', 'Docker', 'Mongo DB', 'Mysql', 'Tailwind', 'Sass', 'Bootstrap', 'Html', 'Css', 'Nginx', 'LangChain', 'OpenAi API', 'Electron.js', 'AWS SDK', 'Angular Material', 'Figma'
   ]
     return(
-      <div className="z-10  max-w-md w-full my-6 bg-white border border-gray-100 text-start rounded-xl shadow-md after:absolute after:top-0 after:-start-4 after:w-4 after:h-full dark:bg-neutral-900 dark:border-neutral-700">
+      <div className="z-10  max-w-full my-6 bg-white border border-gray-100 text-start rounded-xl shadow-md after:absolute after:top-0 after:-start-4 after:w-4 after:h-full dark:bg-neutral-900 dark:border-neutral-700">
         <div className="p-4 md:p-7">
         <h3 className="text-lg font-bold text-gray-800 dark:text-white">
           Tecnologias más usadas

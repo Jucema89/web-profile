@@ -41,17 +41,24 @@ export default function ProjectCards(){
     }, [ projects ])
  
     return(
-        <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
+        <div className="flex flex-col w-full bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
             <div className="p-4 md:p-6">
                 <h3 className="text-lg text-center font-bold text-gray-800 mb-4 dark:text-white">
                 Proyectos
                 </h3>
-                <div className="lg:grid lg:grid-cols-2 lg:gap-4 md:flex-col md:gap-2">
+                <div className="w-full flex flex-col">
+
+                {/* <div className="w-full lg:grid lg:grid-cols-2 md:grid-cols-2 lg:gap-4 md:gap-2"> */}
+                    
                     <div className="lg:flex lg:flex-row md:flex-col lg:col-span-2 bg-white border hover:shadow-md transition shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-                        <img className="lg:w-[40%] md:w-full h-auto rounded-l-lg" src="/images/proyecto_aitrain_pc.png" alt="Aitrain App" />
-                        <div className="p-4 md:p-5">
-                            <div className="flex flex-1 justify-around">
-                            <h3 className="md:text-sm lg:text-lg font-bold text-gray-800 dark:text-white">
+                    
+                    <figure className="object-cover bg-cover md:object-contain">
+                        <img className="w-full h-full rounded-l-lg" src="/images/proyecto_aitrain_pc.png" alt="Aitrain App" />
+                    </figure>
+                      
+                        <div className="p-2 md:p-5">
+                            <div className="flex flex-row lg:justify-start lg:gap-4">
+                            <h3 className="md:text-sm lg:text-md xl:text-[16px] font-bold text-gray-800 dark:text-white">
                             Aitrain: Plataforma de Finetuning para IA
                             </h3>
                             <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-green-50 border border-green-600 text-green-600 dark:text-green-500">Open</span>
@@ -147,46 +154,53 @@ export default function ProjectCards(){
                             </div>
                         </div>
                     </div>
+                    <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4 py-4">
                     {
                         projects.map((project) => (
                         <button key={project.id} className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800 xs:my-2 md:my-0 lg:my-0 xs:w-[92vw] lg:w-auto md:w-auto"
                         onClick={ () => setModalData(project) }>
+
                             <div className="hs-tooltip-toggle p-4 md:p-5">
-                                <div className="flex justify-between items-center">
-                                <div className="flex items-center">
-                                    <img className="size-[38px] rounded-full" src={project.logo} alt={project.title} />
-                                    <div className="ms-3">
-                                    <h3 className="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
-                                    { project.title }
-                                    </h3>
-                                    <div className="flex flex-1 justify-start gap-4">
-                                        <p className="text-sm text-gray-500 dark:text-neutral-400">
-                                        { project.subtitle }
-                                        </p>
-                                        <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 border border-blue-600 text-blue-600 dark:text-blue-500">
-                                            { project.type }
-                                        </span>
-                                    </div>
-
-                                    <div className="flex flex-1 justify-start gap-2 mt-2">
-                                        { project.techs.map((tech, i) => (
-                                            <span key={i} className="inline-flex my-1 items-center gap-x-1.5 py-0.5 px-1.5 rounded-full border border-black md:text-[8px] xs:text-[10px] sm:text-[10px] lg:text-[12px] font-medium  text-black dark:text-white dark:border-gray-50 dark:bg-gray-800">
-                                                {tech}
+                                <div className="flex justify-start items-center">
+                                    <div className="flex items-center">
+                                        <img className="size-[38px] rounded-full" src={project.logo} alt={project.title} />
+                                        <div className="ms-3 flex-col justify-start">
+                                            <h3 className="group-hover:text-blue-600 font-semibold text-gray-800 lg:text-sm text-start text-lg dark:group-hover:text-neutral-400 dark:text-neutral-200">
+                                            { project.title }
+                                            </h3>
+                                            <div className="flex flex-1 justify-start gap-4">
+                                            <p className="text-sm text-gray-500 dark:text-neutral-400">
+                                            { project.subtitle }
+                                            </p>
+                                            <span className="flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 border border-blue-600 text-blue-600 dark:text-blue-500">
+                                                { project.type }
                                             </span>
-                                        ))}
-                                    </div>
+                                        </div>
 
+                                        <div className="flex max-w-[10%] justify-start gap-2 mt-2">
+                                            { project.techs.map((tech, i) => (
+                                                <span key={i} className="my-1 items-center gap-x-1.5 py-0.5 px-1.5 rounded-full border border-black md:text-[8px] xs:text-[10px] sm:text-[10px] lg:text-[12px] font-medium  text-black dark:text-white dark:border-gray-50 dark:bg-gray-800">
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
+
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="ps-3">
-                                    <svg className="flex-shrink-0 size-5 text-gray-800 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                                </div>
+                                    {/* <div className="ps-3">
+                                        <svg className="flex-shrink-0 size-5 text-gray-800 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/>
+                                        </svg>
+                                    </div> */}
                                 </div>
                             </div>
 
                         </button>
                         ))
                     }
+                    </div>
+                    
+                 
+                    
                     {/* < ModalProject modal={ modal } /> */}
                     < ModalProjectComponent modal={ modal } />
                 </div>

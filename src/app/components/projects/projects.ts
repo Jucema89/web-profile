@@ -13,19 +13,19 @@ export interface Project {
 export const ProjectsData: Project[] = [
     {
         id: 1,
-        title: 'Colduty: Saas Fiscal para Empresas',
-        subtitle: 'Frontend Lead',
-        description: 'Diseñe las interfaces en Figma y los Estilos base usando Sass para luego construir los componentes Core (Buttons, Modals, Alerts... etc), que luego mi equipo uso para crear las interfaces. Integre NgRx al proyecto y le sume persistencia en localStorage de ciertas secciones que presentaban un volumen de datos muy pesados, asi mejoramos la UX.',
+        title: 'LeadMan: Gestor de Leads',
+        subtitle: 'FullStack Js',
+        description: 'Desarrolle frontend con Angular y Backend con Nodejs, el dashboard posee un sistema de roles y permisos, lista todos los leads que trae de una Sheet de Google, se redunda la data en una base de datos PostgreSql y se actualizan los estados desde la UI en la DB y en el Sheet de Google. Hay un Usuario de Prueba con user: jose@mail.com t pass: 123456',
         type: 'private',
-        techs: [ 'Angular', 'Next.js', 'Node.Js', 'Mysql' ],
+        techs: [ 'Angular', 'Node.Js', 'PostgreSql', 'Tailwind' ],
         url: 'https://colduty.com/',
-        image: '/images/success_case_colduty.png',
-        logo: '/images/logo-colduty.png'
+        image: '/images/success_case_leadman.png',
+        logo: '/images/leadman_logo.png'
     },
     {
         id: 2,
         title: 'Geven: App de Ventas movil y POS',
-        subtitle: 'FullStack Javascript',
+        subtitle: 'FullStack Js',
         description: 'Diseñe las interfaces, los estilos core y la logica de ingreso con persistencia de sesion mediante JWT en node.js, desde Express conecte Business Central de Microsoft y se redundaban datos en Mongo Db. Todo esto desplegado en un VPS con flujos CI/CD de Github.',
         type: 'private',
         techs: [ 'Node.Js', 'Angular', 'Mongo' ],
