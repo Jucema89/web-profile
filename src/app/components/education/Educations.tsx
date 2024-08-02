@@ -9,6 +9,22 @@ export interface Certificates {
 
 export const Educations: Certificates[] = [
     {
+        id: 7,
+        title: 'React.js con Vite.js y TailwindCSS',
+        scholl: 'Platzi',
+        logo: '/images/platzi_logo.png',
+        date_earned: 'Jul 2024',
+        url: 'https://platzi.com/p/julioDaza/curso/7396-react-vite-tailwindcss/diploma/detalle/'
+    },
+    {
+        id: 8,
+        title: 'Angular Certificate',
+        scholl: 'HackerRank',
+        logo: '/images/hackerrank_logo.jpeg',
+        date_earned: 'Jul 2024',
+        url: 'https://www.hackerrank.com/certificates/7f91a13e1e69'
+    },
+    {
         id: 1,
         title: 'Curso Profesional de Angular',
         scholl: 'Platzi',
