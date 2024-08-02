@@ -8,7 +8,7 @@ export default function EducationCards(){
         <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
             <div className="p-4 md:p-6">
                 <h3 className="text-lg font-bold text-gray-800 mb-4 dark:text-white">
-                Educacion
+                Educación
                 </h3>
                 <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-4">
                    {
@@ -29,6 +29,10 @@ export default function EducationCards(){
                                         <span className="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-gray-50 border border-gray-600 text-gray-600 dark:text-gray-500">
                                             { cert.date_earned }
                                         </span>
+
+                                        <p className="text-transparent ease-in self-center text-xs  font-medium group-hover:text-gray-400">
+                                            Ver certificado
+                                        </p>
                                     </div>
                                 </div>
                             </div>
